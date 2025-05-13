@@ -1,0 +1,28 @@
+INFORME
+Elprograma tiene cuatro clases:
+Main: es el punto de entrada del programa.
+Menu: muestra las opciones al usuario y ejecuta lo que elija.
+Tarea: representa una tarea (lo que es y sus métodos).
+TablaDispersa: es donde se guardan, buscan y eliminan las tareas.
+1)Clase main: 
+Crea un objeto de la clase Menu y llama al método Menu() para mostrar el menú al usuario.
+2)Clase menu:
+Donde se muestran las opciones al usuario para insertar, buscar o eliminar y dentro de cada una las opciones llama a un método de TablaDispersa:
+Variables importantes:
+
+Scanner leer = new Scanner(System.in);
+TablaDispersa tabla = new TablaDispersa();
+Tarea tarea= new Tarea();
+
+-Scanner leer: permite leer lo que el usuario escribe.
+-tabla: es donde se van a guardar todas las tareas.
+-tarea: se usa para ir cargando los datos que el usuario ingresa.
+
+3) Clase tarea:
+   Tiene los atributos de cada tarea como el id que se  genera a través de this.id = UUID.randomUUID().toString();
+   la descripción y el estado, ademas del esAlta para saber si la tarea está o no activa
+   
+5) Clase TablaDispersa:
+   Se guarda las tareas en una tabla de 101 posiciones y se clacula el factor de carga cuando se van sumando tareas.
+   Las funciones insertar, buscar y eliminar se utilizaron como referencia del libro y se adptaron de forma que se puedan utilizar para tareas.
+   Problema: Las posición se repite al agregar la tarea, pero la búsqueda por id siempre devuelve la tarea correcta.
